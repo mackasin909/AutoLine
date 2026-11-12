@@ -1,0 +1,115 @@
+$bp-tablet: 1024px;
+$bp-mobile: 640px;
+
+.services{
+    margin-bottom: 80px;
+}
+
+.serviceCard{
+    display: flex;
+    align-items: start;
+    color: var(--text-primary);
+    column-gap: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    height: 180px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.serviceImage{
+    flex: 0 0 40%;
+    max-width: 250px;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.serviceInfo{
+    padding: 15px 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    min-width: 0;
+
+    & h4{
+        font-size: 20px;
+    }
+
+    & p{
+        color: var(--text-secondary);
+        line-height: 20px;
+        font-weight: 500;
+    }
+
+    & span{
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent-primary);
+    }
+}
+
+@media (max-width: $bp-tablet) {
+    .servicesGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .serviceCard {
+        width: auto;
+        max-width: none;
+        flex: none;
+        margin: 0;
+    }
+
+    .serviceImage {
+        flex-basis: 38%;
+    }
+
+    .serviceInfo {
+        row-gap: 8px;
+
+        & h4 { font-size: 18px; }
+        & p  { font-size: 14px; line-height: 18px; }
+        & span { font-size: 16px; }
+    }
+}
+
+@media (max-width: $bp-mobile) {
+    .services {
+        margin-bottom: 50px;
+    }
+
+    .servicesGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .serviceCard {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        column-gap: 0;
+    }
+
+    .serviceImage {
+        flex: none;
+        max-width: none;
+        width: 100%;
+        height: 140px;
+        border-radius: 0;
+    }
+
+    .serviceInfo {
+        padding: 15px;
+
+        & h4 { font-size: 18px; }
+        & p  { font-size: 15px; line-height: 20px; }
+        & span { font-size: 18px; }
+    }
+}

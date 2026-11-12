@@ -1,0 +1,64 @@
+@use "./grid";
+@use "./variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Manrope", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+}
+
+.title{
+    font-size: 28px;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+:root {
+  /* Background */
+  --bg-primary: #0B0B0D;
+  --bg-secondary: #131314;
+  --bg-card: #1C1C1F;
+  --bg-card-hover: #252528;
+  --bg-input: #202023;
+
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B5;
+  --text-muted: #77777D;
+  --text-dark: #111111;
+
+  /* Accent */
+  --accent-primary: #E50914;
+  --accent-hover: #FF1F2D;
+  --accent-dark: #A8000B;
+  --accent-light: #FF4D57;
+
+  /* Borders */
+  --border: #303034;
+
+  /* Buttons */
+  --btn-primary-bg: #E50914;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #C90010;
+
+  --btn-secondary-bg: #242428;
+  --btn-secondary-text: #FFFFFF;
+
+  /* Status */
+  --success: #25D366;
+  --error: #FF4444;
+}

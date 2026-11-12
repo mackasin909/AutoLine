@@ -1,0 +1,288 @@
+$bp-tablet: 1024px;
+$bp-mobile: 750px;
+
+.banner{
+    position: relative;
+    padding-top: 150px;
+    color: var(--text-primary);
+    background: url("/images/banner.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 700px;
+    overflow-x: clip;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 120px;
+        pointer-events: none;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            var(--bg-primary) 100%
+        );
+    }
+
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    & span{
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+    }
+
+    & h1{
+        font-size: clamp(30px, 5vw, 46px);
+        line-height: 1.15;
+        font-weight: 700;
+        letter-spacing: 3px;
+
+        & span{
+            font-size: inherit;
+            font-weight: 700;
+            text-transform: none;
+            color: var(--text-primary);
+        }
+    }
+
+    & p{
+        color: var(--text-secondary);
+        font-size: 18px;
+        letter-spacing: 1.2px;
+        font-weight: 500;
+    }
+}
+
+.brMobile {
+    display: none;
+}
+
+.mobileImage {
+    display: none;
+}
+
+.buttonsBlock{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    & button,
+    & a{
+        text-decoration: none;
+        padding: 12px 35px;
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        font-size: 18px;
+        border-radius: 10px;
+        color: var(--text-primary);
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+.signButton{
+    border: 1px solid var(--accent-primary);
+    background-color: var(--accent-primary);
+    transition: .2s;
+
+    &:hover{
+        background-color: var(--accent-hover);
+    }
+}
+
+.connectButton {
+    position: relative;
+    padding: 10px 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+
+    isolation: isolate;
+    overflow: hidden;
+
+    transition: color 0.5s ease, border-color 0.4s ease;
+}
+
+.connectButton::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--bg-primary);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.connectButton:hover,
+.connectButton:focus-visible {
+    color: var(--text-primary);
+    border-color: var(--bg-primary);
+}
+
+.connectButton:hover::before,
+.connectButton:focus-visible::before {
+    transform: scaleX(1);
+}
+
+.connectButton:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 5px;
+}
+
+.benefitsBlock{
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    margin-top: 10px;
+}
+
+.benefit{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+    & p{
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+}
+
+.iconShield  { width: 75px; }
+.iconDiamond { width: 90px; }
+.iconClocks  { width: 95px; }
+
+@media (max-width: $bp-tablet) {
+    .banner {
+        min-height: 600px;
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+
+    .info p {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+    }
+
+    .benefitsBlock {
+        column-gap: 25px;
+    }
+}
+
+@media (max-width: $bp-mobile) {
+    .banner {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        background-image: none;                 
+        background-color: var(--bg-primary);
+    }
+
+.mobileImage {
+    display: block;
+    width: 100vw;
+    max-width: none;
+    margin-inline: calc(50% - 50vw);   
+    margin-block: 10px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 90% center;
+
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 20%, #000 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 20%, #000 80%, transparent 100%);
+}
+
+.buttonsBlock {
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 12px;
+    column-gap: 0;
+    margin-top: 0;                          
+
+    & button,
+    & a {
+        justify-content: center;
+        padding: 14px 20px;
+    }
+}
+
+    .brDesktop {
+        display: none;
+    }
+
+    .brMobile {
+        display: inline;
+    }
+
+    .info {
+        row-gap: 12px;
+
+        & h1 {
+            font-size: clamp(30px, 9.6vw, 40px);
+            letter-spacing: 1px;
+
+            & span {
+                color: var(--accent-primary); 
+            }
+        }
+
+        & p {
+            font-size: 15px;
+            letter-spacing: 0.4px;
+            line-height: 1.5;
+        }
+    }
+
+    .tag {
+        font-size: 13px;
+    }
+
+    .benefitsBlock {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 8px;
+        margin-top: 20px;
+    }
+
+    .benefit {
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: 8px;
+        text-align: center;
+
+        & p {
+            font-size: 13px;
+            line-height: 1.3;
+        }
+    }
+
+    .iconShield  { width: 50px; }
+    .iconDiamond { width: 60px; }
+    .iconClocks  { width: 62px; }
+}
