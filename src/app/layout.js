@@ -2,8 +2,8 @@ import Header from "@/components/Header/Header";
 import "../styles/global.scss";
 
 export const metadata = {
-  title: "Auto Line",
-  description: "Detailind Studio | Almaty",
+  title: "Auto Line: детейлинг-студия в Алматы",
+  description: "Detailing Studio | Almaty",
 };
 
 export default function RootLayout({ children }) {
